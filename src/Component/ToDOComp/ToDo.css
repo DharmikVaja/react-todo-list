@@ -10,7 +10,7 @@
 }
 .above_text {
   background-color: rgb(93, 93, 203);
-  color: black;
+  color: white;
   border: none;
   font-size: 30px;
   padding: 10px 10px;
@@ -18,16 +18,17 @@
   text-align: center;
   /* padding-left: 30px; */
 }
-.add_btn { 
+.add_btn {
   height: 14px;
   border-radius: 7px;
   padding: 2px;
 }
 
-.fs-1:hover{
-    color: rgb(15, 150, 15) !important;
-    /* font-size: 42px!important; */
-    /* background-color: green */
+.addbtn:hover {
+  color: rgb(15, 150, 15) !important;
+}
+.closebtn:hover{
+  color: rgb(154, 8, 8) !important;
 }
 
 .todo_input {
@@ -58,4 +59,7 @@
   width: 300px;
   min-width: 50px;
   overflow-x: hidden;
+}
+ol li{
+  text-align: left;
 }

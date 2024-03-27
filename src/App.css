@@ -1,69 +1,69 @@
 /* --------------------------------------------Fonts COnnectivity------------------------------------------------------------------- */
 @font-face {
-    font-family: Poppins-Regular;
-    src: url("../src/assets/fonts/Poppins-Regular.ttf");
-  }
-  @font-face {
-    font-family: Poppins-Medium;
-    src: url("../src/assets/fonts/Poppins-Medium.ttf");
-  }
-  @font-face {
-    font-family: Poppins-Bold;
-    src: url("../src/assets/fonts/Poppins-Bold.ttf");
-  }
-  @font-face {
-    font-family: Poppins-SemiBold;
-    src: url("../src/assets/fonts/Poppins-SemiBold.ttf");
-  }
-  /* -------------------------------------------------Ends Fonts Connectivity-------------------------------------------------------------- */
-  
-  /* ------------------------------------------------Default CSS--------------------------------------------------------------- */
-  
-  :root {
-    --regular: Poppins-Regular;
-    --medium: Poppins-Medium;
-    --Bold: Poppins-Bold;
-    --SemiBold: Poppins-SemiBold;
-  }
-  :root {
-    --primary-color: rgba(255, 174, 9, 1);
-  }
-  * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
-  .container {
-    margin: 0 auto;
-  }
-  body {
-    font-family: var(--regular);
-    overflow-x: hidden;
-  }
-  .cursorPointer{
-    cursor: pointer;
-  }
-  ul, li {
-    list-style: none;
-  }
-  h1,
-  h2,
-  h3,
-  h4,
-  h5,
-  h6,
-  p,
-  a {
-    text-decoration: none;
-  }
-  .spacer-y {
-    padding: 70px 0;
-  }
-body{
-    background: linear-gradient(to bottom right, #2a65ee, #5b6ab5);
-    background-repeat: no-repeat;
-    background-size: 100%;
-    height: 100vh
+  font-family: Poppins-Regular;
+  src: url("../src/assets/fonts/Poppins-Regular.ttf");
 }
-  /* --------------------------------------------------ENd Default CSS------------------------------------------------------------- */
-  
+@font-face {
+  font-family: Poppins-Medium;
+  src: url("../src/assets/fonts/Poppins-Medium.ttf");
+}
+@font-face {
+  font-family: Poppins-Bold;
+  src: url("../src/assets/fonts/Poppins-Bold.ttf");
+}
+@font-face {
+  font-family: Poppins-SemiBold;
+  src: url("../src/assets/fonts/Poppins-SemiBold.ttf");
+}
+/* -------------------------------------------------Ends Fonts Connectivity-------------------------------------------------------------- */
+
+/* ------------------------------------------------Default CSS--------------------------------------------------------------- */
+
+:root {
+  --regular: Poppins-Regular;
+  --medium: Poppins-Medium;
+  --Bold: Poppins-Bold;
+  --SemiBold: Poppins-SemiBold;
+}
+:root {
+  --primary-color: rgba(255, 174, 9, 1);
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.container {
+  margin: 0 auto;
+}
+body {
+  font-family: var(--regular);
+  overflow-x: hidden;
+}
+.cursorPointer {
+  cursor: pointer;
+}
+ul,
+li {
+  list-style: none;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+a {
+  text-decoration: none;
+}
+.spacer-y {
+  padding: 70px 0;
+}
+body {
+  background: linear-gradient(to bottom right, #1942a0, #5b6ab5);
+  background-repeat: no-repeat;
+  background-size: 100%;
+  height: 100vh;
+}
+/* --------------------------------------------------ENd Default CSS------------------------------------------------------------- */

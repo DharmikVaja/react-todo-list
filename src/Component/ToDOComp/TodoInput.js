@@ -2,22 +2,44 @@ import React, { useState } from "react";
 import "./ToDo.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCirclePlus } from "@fortawesome/free-solid-svg-icons";
+import "./ToDoLists";
+import ToDoLists from "./ToDoLists";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
-const TodoInput = () => {
+const TodoInput = (props) => {
   const [task, setTask] = useState("");
-  const [items, setItems] = useState([]);
+  const [list, setList] = useState([]);
 
-  const handleAdd = () => {
-    console.log("Task is Added: ", task);
-    localStorage.setItem("Task", task);
-    setTask("");
-  };
-  let adddedTask = localStorage.getItem("Task");
   const handleChange = (e) => {
     setTask(e.target.value);
   };
+  const handleAdd = () => {
+    if (task.trim() !== "") {
+      console.log("Task is Added: ", task);
+      setList((oldItem) => {
+        return [...oldItem, task];
+      });
+      localStorage.setItem("Task", [...list, setTask]);
+      setTask("");
+    } else {
+      console.log("please enter a task first");
+      toast.error("please enter a non-empty task");
+    }
+  };
+
+  const handleRemove = (id) => {
+    console.log("Task is deleted");
+    setList((oldItem) => {
+      return oldItem.filter((itemValue, index) => {
+        return index !== id;
+      });
+    });
+  };
+
   return (
     <>
+      <ToastContainer />
       <div className="container ">
         <div className="row d-flex flex-row align-center text-center justify-content-center fs-3">
           <div className="col-lg-5 col-md-7 col-sm-8 mt-5">
@@ -36,16 +58,24 @@ const TodoInput = () => {
                       icon={faCirclePlus}
                       style={{ color: "#5d5dcb" }}
                       onClick={handleAdd}
-                      className="cursorPointer fs-1"
+                      className="cursorPointer addbtn fs-1"
                     />
                   </div>
                 </div>
-                {/* <ol className="mt-4">{<li className="" style={{color: "#5d5dcb",}}>{<>{adddedTask}</>}</li>}</ol> */}
-                <ol>
-                  {items.map((itemValue) => {
-                    return <li>{itemValue}</li>;
-                  })}
-                </ol>
+                <div>
+                  <ol>
+                    {list.map((itemValue, index) => {
+                      return (
+                        <ToDoLists
+                          text={itemValue}
+                          delete={handleRemove}
+                          key={index}
+                          id={index}
+                        />
+                      );
+                    })}
+                  </ol>
+                </div>
               </div>
             </div>
           </div>
