@@ -1,38 +1,69 @@
-.App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+/* --------------------------------------------Fonts COnnectivity------------------------------------------------------------------- */
+@font-face {
+    font-family: Poppins-Regular;
+    src: url("../src/assets/fonts/Poppins-Regular.ttf");
   }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+  @font-face {
+    font-family: Poppins-Medium;
+    src: url("../src/assets/fonts/Poppins-Medium.ttf");
   }
-  to {
-    transform: rotate(360deg);
+  @font-face {
+    font-family: Poppins-Bold;
+    src: url("../src/assets/fonts/Poppins-Bold.ttf");
   }
+  @font-face {
+    font-family: Poppins-SemiBold;
+    src: url("../src/assets/fonts/Poppins-SemiBold.ttf");
+  }
+  /* -------------------------------------------------Ends Fonts Connectivity-------------------------------------------------------------- */
+  
+  /* ------------------------------------------------Default CSS--------------------------------------------------------------- */
+  
+  :root {
+    --regular: Poppins-Regular;
+    --medium: Poppins-Medium;
+    --Bold: Poppins-Bold;
+    --SemiBold: Poppins-SemiBold;
+  }
+  :root {
+    --primary-color: rgba(255, 174, 9, 1);
+  }
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  .container {
+    margin: 0 auto;
+  }
+  body {
+    font-family: var(--regular);
+    overflow-x: hidden;
+  }
+  .cursorPointer{
+    cursor: pointer;
+  }
+  ul, li {
+    list-style: none;
+  }
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  p,
+  a {
+    text-decoration: none;
+  }
+  .spacer-y {
+    padding: 70px 0;
+  }
+body{
+    background: linear-gradient(to bottom right, #2a65ee, #5b6ab5);
+    background-repeat: no-repeat;
+    background-size: 100%;
+    height: 100vh
 }
+  /* --------------------------------------------------ENd Default CSS------------------------------------------------------------- */
+  

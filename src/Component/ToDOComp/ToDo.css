@@ -1,0 +1,61 @@
+.todo_ip_block {
+  box-sizing: border-box;
+  box-shadow: 0px 2px 2px 2px rgb(10, 10, 10, 0.5);
+  background-color: white;
+  color: black;
+  font-size: 20px;
+  width: 100%;
+  border-radius: 34px;
+  padding-top: 5px;
+}
+.above_text {
+  background-color: rgb(93, 93, 203);
+  color: black;
+  border: none;
+  font-size: 30px;
+  padding: 10px 10px;
+  align-items: center;
+  text-align: center;
+  /* padding-left: 30px; */
+}
+.add_btn { 
+  height: 14px;
+  border-radius: 7px;
+  padding: 2px;
+}
+
+.fs-1:hover{
+    color: rgb(15, 150, 15) !important;
+    /* font-size: 42px!important; */
+    /* background-color: green */
+}
+
+.todo_input {
+  border: 1px solid black;
+  display: flex;
+  text-align: start;
+  align-content: left;
+  border-radius: 3px;
+  padding: 0 7px;
+  font-size: 15px;
+  /* height: 30px; */
+  width: 400px;
+  min-width: 150px;
+}
+.todo_content {
+  padding: 30px;
+}
+.added_list {
+  font-size: 14px;
+  border: 1px solid transparent;
+  display: flex;
+  background-color: rgba(128, 128, 128, 0.479);
+  text-align: start;
+  align-content: left;
+  border-radius: 3px;
+  /* margin-left: 30px; */
+  padding: 0 7px;
+  width: 300px;
+  min-width: 50px;
+  overflow-x: hidden;
+}
