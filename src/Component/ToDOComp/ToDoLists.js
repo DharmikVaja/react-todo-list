@@ -5,7 +5,7 @@ import { faCircleXmark } from "@fortawesome/free-regular-svg-icons";
 const ToDoLists = (props) => {
   return (
     <>
-      <div className="d-flex flex-row py-2">
+      <div className="d-flex flex-row py-2 ">
         <FontAwesomeIcon
           icon={faCircleXmark}
           style={{ color: "#5d5dcb" }}

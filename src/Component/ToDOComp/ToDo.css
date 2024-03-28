@@ -5,9 +5,17 @@
   color: black;
   font-size: 20px;
   width: 100%;
+  height: 85vh;
+  overflow-y: scroll;
   border-radius: 34px;
   padding-top: 5px;
 }
+
+.todo_ip_block::-webkit-scrollbar {
+  display: none;
+
+}
+
 .above_text {
   background-color: rgb(93, 93, 203);
   color: white;
@@ -18,21 +26,18 @@
   text-align: center;
   /* padding-left: 30px; */
 }
-.add_btn {
-  height: 14px;
-  border-radius: 7px;
-  padding: 2px;
-}
 
 .addbtn:hover {
   color: rgb(15, 150, 15) !important;
 }
-.closebtn:hover{
+
+.closebtn:hover {
   color: rgb(154, 8, 8) !important;
 }
 
 .todo_input {
-  border: 1px solid black;
+  /* border: 1px solid black; */
+  border: 1px solid rgb(93, 93, 203);
   display: flex;
   text-align: start;
   align-content: left;
@@ -43,9 +48,11 @@
   width: 400px;
   min-width: 150px;
 }
+
 .todo_content {
   padding: 30px;
 }
+
 .added_list {
   font-size: 14px;
   border: 1px solid transparent;
@@ -60,6 +67,38 @@
   min-width: 50px;
   overflow-x: hidden;
 }
-ol li{
+
+ol li {
   text-align: left;
+}
+
+.searchbtn:hover {
+  color: rgb(154, 164, 76) !important;
+  /* background-color:blue; */
+  
+
+}
+.remove_all:hover{
+  color: rgb(181, 4, 4)!important
+
+}
+.search_input {
+  font-size: 13px !important;
+  border: 1px solid rgb(93, 93, 203);
+  padding: 2px;
+}
+
+@media screen and (max-width: 768px) {
+  .todo_content {
+    padding: 10px;
+  }
+  li {
+    font-size: 12px;
+  }
+  ol {
+    padding-left: 5px;
+  }
+  .todo_input {
+    font-size: 12px;
+  }
 }
