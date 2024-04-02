@@ -63,6 +63,7 @@ const TodoInput = (props) => {
     setTask("");
     setList([]);
     localStorage.removeItem("tasks");
+    toast("All tasks have been removed successfully!");
   };
 
   return (
@@ -126,13 +127,18 @@ const TodoInput = (props) => {
                     </Modal>
                   </div>
                 </div>
-                <div className="d-flex gap-3 mb-3">
+                <div className="d-flex gap-3 mb-3 form-floating align-items-center">
                   <input
-                    className="todo_input "
-                    placeholder="Add Your new task here..."
+                    className="form-control todo_input"
+                    id="floatingInput"
+                    placeholder="name@example.com"
                     value={task}
                     onChange={handleChange}
                   />
+                  <label for="floatingInput fs-4">
+                    Add Your new task here...
+                  </label>
+
                   <div className="">
                     <FontAwesomeIcon
                       icon={faCirclePlus}
