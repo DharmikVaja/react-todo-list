@@ -75,29 +75,41 @@ ol li {
 .searchbtn:hover {
   color: rgb(154, 164, 76) !important;
   /* background-color:blue; */
-  
+
 
 }
-.remove_all:hover{
-  color: rgb(181, 4, 4)!important
 
+.remove_all:hover {
+  color: rgb(181, 4, 4) !important
 }
+
 .search_input {
   font-size: 13px !important;
   border: 1px solid rgb(93, 93, 203);
   padding: 2px;
 }
 
+.updatebtn:hover {
+  color: rgb(169, 207, 14) !important;
+}
+
+.update_modal {
+  opacity: 0.75;
+}
+
 @media screen and (max-width: 768px) {
   .todo_content {
     padding: 10px;
   }
+
   li {
     font-size: 12px;
   }
+
   ol {
     padding-left: 5px;
   }
+
   .todo_input {
     font-size: 12px;
   }
