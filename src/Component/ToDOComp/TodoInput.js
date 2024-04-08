@@ -10,7 +10,6 @@ import { MdManageSearch } from "react-icons/md";
 import { TbTrashXFilled } from "react-icons/tb";
 import Modal from "react-bootstrap/Modal";
 import Button from "react-bootstrap/Button";
-import Form from "react-bootstrap/Form";
 
 const TodoInput = (props) => {
   const [task, setTask] = useState("");
@@ -19,7 +18,6 @@ const TodoInput = (props) => {
   const [searchedTask, setSearchedTask] = useState("");
 
   const [modalShow, setModalShow] = useState(false);
-  const [show2, setShow2] = useState(false);
 
   useEffect(() => {
     const storedTasks = JSON.parse(localStorage.getItem("tasks"));
@@ -27,10 +25,6 @@ const TodoInput = (props) => {
       setList(storedTasks);
     }
   }, []);
-
-  useEffect(() => {
-    localStorage.setItem("tasks", JSON.stringify(list));
-  }, [list]);
 
   const handleChange = (e) => {
     setTask(e.target.value);
@@ -42,31 +36,10 @@ const TodoInput = (props) => {
         id: Date.now(),
         text: task,
       };
+
       setList((oldList) => [...oldList, newTask]);
+      localStorage.setItem("tasks", JSON.stringify([...list, newTask]));
       setTask("");
-    } else {
-      toast.error("Please enter a non-empty task");
-    }
-  };
-
-  const handleUpdateTask = (id) => {
-    const updatedText = document.getElementById("updateTaskInput").value.trim();
-
-    if (updatedText !== "") {
-      const storedTasks = JSON.parse(localStorage.getItem("tasks"));
-
-      const updatedTasks = storedTasks.map((task) => {
-        if (task.id === id) {
-          return { ...task, text: updatedText };
-        }
-        return task;
-      });
-
-      localStorage.setItem("tasks", JSON.stringify(updatedTasks));
-
-      setList(updatedTasks);
-
-      handleClose2();
     } else {
       toast.error("Please enter a non-empty task");
     }
@@ -74,16 +47,11 @@ const TodoInput = (props) => {
 
   const handleRemove = (id) => {
     setList((oldList) => oldList.filter((task) => task.id !== id));
+    localStorage.setItem(
+      "tasks",
+      JSON.stringify(list.filter((task) => task.id !== id))
+    );
   };
-  //
-
-  const handleClose2 = () => setShow2(false);
-  const handleShow2 = () => setShow2(true);
-  const handleUpdate = () => {
-    handleShow2();
-  };
-  //
-
   const handleSearch = () => {
     setShowSearch(!showSearch);
   };
@@ -97,6 +65,7 @@ const TodoInput = (props) => {
     localStorage.removeItem("tasks");
     toast("All tasks have been removed successfully!");
   };
+
   return (
     <>
       <ToastContainer />
@@ -134,7 +103,6 @@ const TodoInput = (props) => {
                         onClick={() => setModalShow(true)}
                       />
                     </span>
-                    {/* REMOVE ALL */}
                     <Modal
                       show={modalShow}
                       onHide={() => setModalShow(false)}
@@ -157,43 +125,6 @@ const TodoInput = (props) => {
                         </Button>
                       </Modal.Footer>
                     </Modal>
-                    {/*  */}
-                    <Modal
-                      show={show2}
-                      onHide={handleClose2}
-                      className="update_modal"
-                      size="sm"
-                      aria-labelledby="contained-modal-title-vcenter"
-                      centered
-                    >
-                      <Modal.Header closeButton></Modal.Header>
-                      <Modal.Body>
-                        <Form>
-                          <Form.Group className="mb-3">
-                            <Form.Label></Form.Label>
-                            <Form.Control
-                              type="email"
-                              id="updateTaskInput"
-                              placeholder="Update the task:"
-                              autoFocus
-                            />
-                          </Form.Group>
-                        </Form>
-                      </Modal.Body>
-                      <Modal.Footer>
-                        <Button variant="secondary" onClick={handleClose2}>
-                          cancel
-                        </Button>
-                        <Button
-                          variant="primary"
-                          onClick={() => handleUpdateTask(task.id)}
-                        >
-                          Save Task
-                        </Button>
-                      </Modal.Footer>
-                    </Modal>
-
-                    {/*  */}
                   </div>
                 </div>
                 <div className="d-flex gap-3 mb-3 form-floating align-items-center">
@@ -233,7 +164,6 @@ const TodoInput = (props) => {
                           id={task.id}
                           text={task.text}
                           delete={handleRemove}
-                          update={handleUpdate}
                         />
                       ))}
                   </ol>
